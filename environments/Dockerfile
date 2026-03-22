@@ -15,6 +15,7 @@ ENV DEBIAN_FRONTEND="noninteractive" \
     LANG="C.UTF-8" \
     PYTHONPATH=${APPLICATION_DIRECTORY}
 
+RUN chmod 1777 /tmp /var/tmp
 RUN apt update -y && apt install --no-install-recommends -y software-properties-common gpg-agent \
     # Add deadsnakes PPA to install older Python versions
     && add-apt-repository ppa:deadsnakes/ppa \
