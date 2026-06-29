@@ -38,6 +38,7 @@ RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python${PYTHON_VERSION}
 RUN python3 -m pip install --upgrade pip setuptools requests wheel six urllib3 \
     && python3 -m pip install uv poethepoet
 
+# RUN echo "GROUP_NAME=${GROUP_NAME}, GID=${GID}, USER_NAME=${USER_NAME}, UID=${UID}, APPLICATION_DIRECTORY=${APPLICATION_DIRECTORY}"
 # Add user. Without this, following process is executed as admin.
 RUN groupadd -g ${GID} ${GROUP_NAME} \
     && useradd -ms /bin/sh -u ${UID} -g ${GID} ${USER_NAME}

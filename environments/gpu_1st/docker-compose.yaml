@@ -12,11 +12,11 @@ services:
       args:
         - BASE_IMAGE=nvidia/cuda:12.1.1-devel-ubuntu22.04
         - PYTHON_VERSION=3.12
-        - UID=${HOST_UID-1018}
+        - UID=${HOST_UID-1031}
         - GID=${HOST_GID-2002}
         - PROJECT_NAME=${PROJECT_NAME_ENV}
         - USER_NAME=${USER_NAME_ENV}
-        - GROUP_NAME=${GROUP_NAME_ENV}
+        - GROUP_NAME=${GROUP_NAME_1ST_ENV}
       context: ../../
       dockerfile: environments/Dockerfile
     # env_file:
@@ -26,4 +26,4 @@ services:
         - ../../:/home/${USER_NAME_ENV}/${PROJECT_NAME_ENV}
         # - /home/data3/tksara/lrs2:/home/${USER_NAME_ENV}/${PROJECT_NAME_ENV}/auto_avsr/dataset/lrs2/Lawdata # NOTE: for A6000_2nd data3 is under /home
     ports:
-        - 8000:8000
+        - 8011:8011
