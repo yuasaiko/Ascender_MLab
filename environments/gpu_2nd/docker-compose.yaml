@@ -16,7 +16,7 @@ services:
         - GID=${HOST_GID-2002}
         - PROJECT_NAME=${PROJECT_NAME_ENV}
         - USER_NAME=${USER_NAME_ENV}
-        - GROUP_NAME=${GROUP_NAME_ENV}
+        - GROUP_NAME=${GROUP_NAME_2ND_ENV}
       context: ../../
       dockerfile: environments/Dockerfile
     # env_file:
